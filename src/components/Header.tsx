@@ -20,7 +20,7 @@ export default function Header({ personalInfo }: HeaderProps) {
               </span>
             </p>
             <p className="text-lg text-gray-600 mt-2 animate-slide-up-delayed group cursor-pointer">
-              <span className="hover:scale-125 transition-transform duration-300 inline-block">🎨</span> {personalInfo.roles.designer}% Designer •
+              <span className="hover:scale-125 transition-transform duration-300 inline-block">🎨</span> {personalInfo.roles.student}% Designer •
               <span className="hover:scale-125 transition-transform duration-300 inline-block">💻</span> {personalInfo.roles.engineer}% Engineer •
               <span className="hover:scale-125 transition-transform duration-300 inline-block">🍁</span> {personalInfo.location}
             </p>
