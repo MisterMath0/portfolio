@@ -22,7 +22,7 @@ export interface App {
   name: string;
   description: string;
   iconUrl: string;
-  status: 'live' | 'beta' | 'coming-soon';
+  status: 'live' | 'beta' | 'coming-soon' | 'offline';
   stats: {
     users: number;
     growth: string;
@@ -73,7 +73,7 @@ export interface Article {
 
 export interface MovieShow {
   id: string;
-  company: string;
+  name: string;
   role: string;
   description: string;
   iconUrl: string;
@@ -88,7 +88,7 @@ export interface PortfolioConfig {
   codeProjects: CodeProject[];
   personalStats: PersonalStat[];
   articles: Article[];
-  moviesShows: MovieShow[];
+  hobbys: MovieShow[];
   sections: {
     apps: {
       title: string;
@@ -110,7 +110,7 @@ export interface PortfolioConfig {
       title: string;
       subtitle?: string;
     };
-    movies: {
+    hobbys: {
       title: string;
       subtitle?: string;
     };
@@ -133,158 +133,132 @@ export const portfolioConfig: PortfolioConfig = {
       engineer: 30,
     },
     social: {
-      email: "metasidd@gmail.com",
-      twitter: "https://x.com/metasidd",
-      linkedin: "https://www.linkedin.com/in/siddhantmehta",
+      email: "guymathieuf@gmail.com",
+      twitter: "https://x.com/heyitsmattai",
+      linkedin: "https://www.linkedin.com/in/guymathieufoko/",
     },
   },
 
   apps: [
     {
-      id: "crossword-chef",
-      name: "Crossword Chef",
-      description: "Crosswords for your world",
-      iconUrl: "https://play-lh.googleusercontent.com/your-app-icon-url", // Replace with your actual app icon URL
+      id: "mindra_macos",
+      name: "Mindra macOS",
+      description: "A beautiful and intuitive productivity timer for macOS.",
+      iconUrl: "https://mindra.klarvio.app/assets/AppIcon.appiconset/icon-256x256.png",
       status: "live",
       stats: {
-        users: 2847,
-        growth: "+23% this month",
+        users: 20,
+        growth: "+0% this month",
       },
       actionType: "download",
       actionText: "Download",
-      url: "https://apps.apple.com/app/crossword-chef", // Replace with your actual app store URL
+      url: "https://mindra.klarvio.app/MindraTimer.dmg", 
     },
     {
-      id: "feelings-diary",
-      name: "Feelings Diary",
-      description: "A daily mental health journal",
-      iconUrl: "https://play-lh.googleusercontent.com/your-app-icon-url", // Replace with your actual app icon URL
-      status: "live",
-      stats: {
-        users: 1247,
-        growth: "+18% this month",
-      },
-      actionType: "download",
-      actionText: "Download",
-      url: "https://apps.apple.com/app/feelings-diary", // Replace with your actual app store URL
-    },
-    {
-      id: "get-nerdy",
-      name: "Get Nerdy",
-      description: "A Duolingo for knowledge",
-      iconUrl: "https://play-lh.googleusercontent.com/your-app-icon-url", // Replace with your actual app icon URL
-      status: "beta",
-      stats: {
-        users: 342,
-        growth: "+45% this month",
-      },
-      actionType: "signup",
-      actionText: "Sign Up",
-      url: "https://getnerdy.app", // Replace with your actual app URL
-    },
-    {
-      id: "super-diary",
-      name: "Super Diary",
-      description: "A diary-first social network",
-      iconUrl: "https://play-lh.googleusercontent.com/your-app-icon-url", // Replace with your actual app icon URL
+      id: "settl",
+      name: "Settl",
+      description: "Settl makes Germany accessible",
+      iconUrl: "", 
       status: "coming-soon",
       stats: {
         users: 0,
         growth: "In development",
       },
+      actionType: "signup",
+      actionText: "Join the waitlist",
+      url: "", 
+    },
+    {
+      id: "mira_ios",
+      name: "Mira",
+      description: "Organize Life Step by Step",
+      iconUrl: "/logo.png",
+      status: "coming-soon",
+      stats: {
+        users: 0,
+        growth: "In development",
+      },
+      actionType: "signup",
+      actionText: "Sign Up",
+      url: "",
+    },
+    {
+      id: "sautokraft",
+      name: "AutoKraft",
+      description: "A worflow generator for N8N",
+      iconUrl: "", 
+      status: "offline",
+      stats: {
+        users: 0,
+        growth: "Shut down",
+      },
       actionType: "wip",
       actionText: "Work in Progress",
-      url: "https://superdiary.app", // Replace with your actual app URL
+      url: "https://autokraft.app", 
     },
   ],
 
   experience: [
     {
-      id: "slack",
-      company: "Slack Inc",
-      role: "Senior Staff Designer",
-      period: "2020 - 2024",
-      description: "Mobile design lead for 4 years",
-      iconUrl: "https://a.slack-edge.com/80588/marketing/img/meta/favicon-32.png",
-      url: "https://slack.com",
+      id: "heimat24",
+      company: "Heimat24 AI",
+      role: " Software Engineer",
+      period: " Feb 2025 - present",
+      description: "Building AI applications with emphasis on RAG, Chatbots and Automation",
+      iconUrl: "https://static.wixstatic.com/media/a5b1cc_5e60260662ba4dd9bf8c6a6e796a0d0e~mv2.png/v1/fill/w_160,h_90,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO%20H24.png",
+      url: "https://heimat24.de",
     },
     {
-      id: "outlook",
-      company: "Microsoft Outlook",
-      role: "Senior Designer",
-      period: "2018 - 2020",
-      description: "Play My Emails, upcoming events, ads, widgets and more",
-      iconUrl: "https://res.cdn.office.net/assets/mail/fabric-cdn-prod_20230815.02/assets/images/favicon-outlook.ico",
-      url: "https://outlook.com",
+      id: "th_rosenheim",
+      company: "Technische Hochschule Rosenheim",
+      role: "Student",
+      period: "Oct 2023 - present",
+      description: "Studying Bachelor of Artificial Intelligence",
+      iconUrl: "https://www.wasserburger-stimme.de/wp-content/uploads/2021/10/hochschule.png",
+      url: "https://www.th-rosenheim.de",
     },
     {
-      id: "microsoft-365",
-      company: "Microsoft 365 - Side Projects",
-      role: "Product Designer",
-      period: "2017 - 2019",
-      description: "Re-imagining visual design for Word, Excel & Powerpoint",
-      iconUrl: "https://res.cdn.office.net/assets/mail/fabric-cdn-prod_20230815.02/assets/images/favicon-office365.ico",
-      url: "https://www.microsoft.com/en-us/microsoft-365",
-    },
-    {
-      id: "skype",
-      company: "Skype",
-      role: "Product Designer",
-      period: "2016 - 2017",
-      description: "A short gig exploring VR and Moments",
-      iconUrl: "https://secure.skypeassets.com/apollo/2.6.78/images/icons/favicon.ico",
-      url: "https://skype.com",
-    },
-    {
-      id: "youtube",
-      company: "YouTube",
-      role: "Design Intern",
-      period: "2015 - 2016",
-      description: "A glimpse from my internship at Google",
-      iconUrl: "https://www.youtube.com/s/desktop/f506bd45/img/favicon_32x32.png",
-      url: "https://youtube.com",
+      id: "uy1-ngoaekele",
+      company: "University of Yaounde I Ngoaekele",
+      role: "Student",
+      period: "Oct 2019 - sep 2023",
+      description: "Studying Bachelor of Computer Science",
+      iconUrl: "https://uy1.uninet.cm/wp-content/uploads/2025/03/Logo-Universite-de-Yaounde-1-251px-.png",
+      url: "https://uy1.uninet.cm",
     },
   ],
 
   codeProjects: [
     {
-      id: "orb",
-      name: "Orb",
-      description: "A mesmerizing orb, fully designed in SwiftUI",
-      iconUrl: "https://github.githubassets.com/favicons/favicon.png",
-      githubUrl: "https://github.com/username/orb", // Replace with your actual GitHub URL
-      hoverAnimation: "glow",
+      id: "n8n-automated",
+      name: "N8N Automated",
+      description: "Automated N8N workflows with AI",
+      iconUrl: "https://n8n.io/guidelines/logo-dark.svg",
+      githubUrl: "https://github.com/MisterMath0/n8n-automated", 
+      hoverAnimation: "scale",
     },
     {
-      id: "siri-screen",
-      name: "Prototype Siri Screen Animation",
-      description: "Prototype Siri screen animations",
-      iconUrl: "https://github.githubassets.com/favicons/favicon.png",
-      githubUrl: "https://github.com/username/siri-screen", // Replace with your actual GitHub URL
-      hoverAnimation: "slide",
+      id: "mindra_macos",
+      name: "Mindra macOS",
+      description: "A beautiful and intuitive productivity timer for macOS.",
+      iconUrl: "https://mindra.klarvio.app/assets/AppIcon.appiconset/icon-256x256.png",
+      githubUrl: "https://github.com/MisterMath0/mindra_macos", 
+      hoverAnimation: "scale",
     },
     {
-      id: "color-tokens",
-      name: "ColorTokensKit-Swift",
-      description: "A powerful color tokens system for Apple platforms",
-      iconUrl: "https://github.githubassets.com/favicons/favicon.png",
-      githubUrl: "https://github.com/username/color-tokens", // Replace with your actual GitHub URL
-      hoverAnimation: "glow",
+      id: "cv-builder",
+      name: "CV Builder",
+      description: "A powerful CV builder for me and my friends",
+      iconUrl: "https://cv-builder-frontend-six.vercel.app/favicon.ico",
+      githubUrl: "https://github.com/MisterMath0/cv-builder-frontend", 
+      hoverAnimation: "scale",
     },
     {
-      id: "siri-textfield",
-      name: "Prototype Siri Textfield",
-      description: "A simple prototype copying the Apple Siri Textfield animations",
+      id: "portfolio-site",
+      name: "Portfolio Site",
+      description: "A simple portfolio site for me",
       iconUrl: "https://github.githubassets.com/favicons/favicon.png",
-      githubUrl: "https://github.com/username/siri-textfield", // Replace with your actual GitHub URL
-      hoverAnimation: "slide",
-    },
-    {
-      id: "shadow-kit",
-      name: "ShadowKit-SwiftUI",
-      description: "Bringing the best looking shadows to your iOS app",
-      iconUrl: "https://github.githubassets.com/favicons/favicon.png",
-      githubUrl: "https://github.com/username/shadow-kit", // Replace with your actual GitHub URL
+      githubUrl: "https://github.com/MisterMath0/portfolio", 
       hoverAnimation: "scale",
     },
   ],
@@ -423,24 +397,24 @@ export const portfolioConfig: PortfolioConfig = {
     },
   ],
 
-  moviesShows: [
+  hobbys: [
     {
-      id: "dreamworks",
-      company: "DreamWorks Animation",
-      role: "3D Animator",
-      description: "Past life as a 3D Animator",
-      iconUrl: "https://www.dreamworks.com/favicon.ico",
-      actionText: "Animations",
-      url: "https://www.dreamworks.com",
+      id: "youtube",
+      name: "MisterMatt",
+      role: "Content Creator",
+      description: "Documenting my journey with transparency",
+      iconUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_play_button_icon_%282013–2017%29.svg/1024px-YouTube_play_button_icon_%282013–2017%29.svg.png?20190606141903",
+      actionText: "Watch",
+      url: "https://www.youtube.com/channel/UCtEe9kuVrS-jcBXvVdzxcMg",
     },
     {
-      id: "animation-mentor",
-      company: "Student at Animation Mentor",
-      role: "Student",
-      description: "Understanding the basics of 3D animation",
-      iconUrl: "https://www.animationmentor.com/favicon.ico",
-      actionText: "Animations",
-      url: "https://www.animationmentor.com",
+      id: "instagram",
+      name: "Heyitsmattai",
+      role: "Content Creator",
+      description: "Speaking whatever is whats on my mind",
+      iconUrl: "https://static.vecteezy.com/system/resources/thumbnails/016/716/450/small_2x/tiktok-icon-free-png.png",
+      actionText: "Watch",
+      url: "https://www.tiktok.com/@heyitsmatt.ai",
     },
   ],
 
@@ -449,7 +423,7 @@ export const portfolioConfig: PortfolioConfig = {
       title: "Apps I've coded",
     },
     experience: {
-      title: "Products I've designed",
+      title: "What I've been doing",
     },
     code: {
       title: "Code I've open sourced",
@@ -460,11 +434,11 @@ export const portfolioConfig: PortfolioConfig = {
     articles: {
       title: "✍🏻 Articles that covered my work",
     },
-    movies: {
-      title: "Movies & shows I've animated",
+    hobbys: {
+      title: "🎨 This is where i spend my free time",
     },
     contact: {
-      title: "Open to advising startups, & coaching designers.",
+      title: "Feel free to drop me a message or whatever. You will make my day!",
     },
   },
 };

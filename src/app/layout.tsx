@@ -9,26 +9,31 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Siddhant Mehta • Software Designer & Engineer",
-  description: "Product designer and developer with experience at Slack, Microsoft, and DreamWorks Animation. Specializing in mobile design, UI/UX, and iOS development.",
-  keywords: "Siddhant Mehta,design coach,design mentor,looking for design coach,learn mobile design,slack design case study,canada designer,design founders,ios design patterns,mobile app redesign,design portfolio examples,design career advice,how to design mobile apps,designer entrepreneur,design leadership,senior designer insights",
-  authors: [{ name: "Siddhant Mehta" }],
-  creator: "Siddhant Mehta",
-  publisher: "Siddhant Mehta",
+  title: "Guy Mathieu Foko • Software Engineer",
+  description: "Software engineer with experience at Heimat24 AI. Specializing in AI Aplications with emphasis on RAG, Chatbots and Automation. I sometimes do UI/UX and Mobile Development.",
+  keywords: "Guy Mathieu FOKO,programmer,software engineer,ai applications,rag,chatbots,automation,ui/ux,mobile development",
+  authors: [{ name: "Guy Mathieu FOKO" }],
+  creator: "Guy Mathieu FOKO",
+  publisher: "Guy Mathieu FOKO",
   robots: "index, follow",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
-    title: "Siddhant Mehta • Software Designer & Engineer",
+    title: "Guy Mathieu FOKO • Software Engineer",
     description: "Product designer and developer with experience at Slack, Microsoft, and DreamWorks Animation. Specializing in mobile design, UI/UX, and iOS development.",
-    url: "https://siddhantmehta.com",
-    siteName: "Siddhant Mehta Portfolio",
+    url: "https://mrmath.dev",
+    siteName: "Guy Mathieu FOKO Portfolio",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    creator: "@metasidd",
-    title: "Siddhant Mehta • Software Designer & Engineer",
-    description: "Product designer and developer with experience at Slack, Microsoft, and DreamWorks Animation.",
+    creator: "@heyitsmattai",
+    title: "Guy Mathieu FOKO • Software Engineer",
+    description: "Software engineer with experience at Heimat24 AI. Specializing in AI Aplications with emphasis on RAG, Chatbots and Automation. I sometimes do UI/UX and Mobile Development.",
   },
 };
 

@@ -16,45 +16,55 @@ const getStatusColors = (status: App['status']) => {
       return { dot: 'bg-yellow-500', text: 'text-yellow-600', label: 'Beta' };
     case 'coming-soon':
       return { dot: 'bg-gray-400', text: 'text-gray-500', label: 'Coming Soon' };
+    case 'offline':
+      return { dot: 'bg-red-400', text: 'text-orange-400', label: 'Offline' };
     default:
       return { dot: 'bg-gray-400', text: 'text-gray-500', label: 'Unknown' };
   }
 };
 
-const getAppColorClasses = (appId: string) => {
-  const colorMap: Record<string, { bg: string; hover: string; button: string; buttonHover: string }> = {
-    'crossword-chef': {
+const getAppColorClasses = (index: number) => {
+  const colors = [
+    {
       bg: 'bg-orange-100',
       hover: 'group-hover:bg-orange-200',
       button: 'bg-orange-100 text-orange-800',
       buttonHover: 'hover:bg-orange-200'
     },
-    'feelings-diary': {
+    {
       bg: 'bg-blue-100',
       hover: 'group-hover:bg-blue-200',
       button: 'bg-blue-100 text-blue-800',
       buttonHover: 'hover:bg-blue-200'
     },
-    'get-nerdy': {
+    {
       bg: 'bg-green-100',
       hover: 'group-hover:bg-green-200',
       button: 'bg-green-100 text-green-800',
       buttonHover: 'hover:bg-green-200'
     },
-    'super-diary': {
+    {
       bg: 'bg-purple-100',
       hover: 'group-hover:bg-purple-200',
       button: 'bg-purple-100 text-purple-800',
       buttonHover: 'hover:bg-purple-200'
     },
-  };
+    {
+      bg: 'bg-pink-100',
+      hover: 'group-hover:bg-pink-200',
+      button: 'bg-pink-100 text-pink-800',
+      buttonHover: 'hover:bg-pink-200'
+    },
+    {
+      bg: 'bg-yellow-100',
+      hover: 'group-hover:bg-yellow-200',
+      button: 'bg-yellow-100 text-yellow-800',
+      buttonHover: 'hover:bg-yellow-200'
+    },
+  ];
 
-  return colorMap[appId] || {
-    bg: 'bg-gray-100',
-    hover: 'group-hover:bg-gray-200',
-    button: 'bg-gray-100 text-gray-800',
-    buttonHover: 'hover:bg-gray-200'
-  };
+  // Cycle through colors based on index
+  return colors[index % colors.length];
 };
 
 
@@ -70,9 +80,9 @@ const getActionIcon = (actionType: App['actionType']) => {
   }
 };
 
-function AppCard({ app }: { app: App }) {
+function AppCard({ app, index }: { app: App; index: number }) {
   const statusColors = getStatusColors(app.status);
-  const colorClasses = getAppColorClasses(app.id);
+  const colorClasses = getAppColorClasses(index);
 
   return (
     <div className="bg-white rounded-2xl p-6 hover:scale-105 transition-all duration-300 group cursor-pointer shadow-sm hover:shadow-lg overflow-hidden">
@@ -138,8 +148,8 @@ export default function AppsSection({ title, apps }: AppsSectionProps) {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {apps.map((app) => (
-              <AppCard key={app.id} app={app} />
+            {apps.map((app, index) => (
+              <AppCard key={app.id} app={app} index={index} />
             ))}
           </div>
         </section>

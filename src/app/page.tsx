@@ -5,7 +5,7 @@ import ExperienceSection from '@/components/ExperienceSection';
 import CodeSection from '@/components/CodeSection';
 import PersonalSection from '@/components/PersonalSection';
 import ArticlesSection from '@/components/ArticlesSection';
-import MoviesSection from '@/components/MoviesSection';
+import MoviesSection from '@/components/HobbysSection';
 import ContactSection from '@/components/ContactSection';
 
 export default function Home() {
@@ -43,15 +43,15 @@ export default function Home() {
       />
 
       <MoviesSection
-        title={portfolioConfig.sections.movies.title}
-        moviesShows={portfolioConfig.moviesShows}
+        title={portfolioConfig.sections.hobbys.title}
+        moviesShows={portfolioConfig.hobbys}
       />
-
+{/*
       <ArticlesSection
         title={portfolioConfig.sections.articles.title}
         articles={portfolioConfig.articles}
       />
-
+      */}
       <PersonalSection
         title={portfolioConfig.sections.personal.title}
         stats={portfolioConfig.personalStats}
