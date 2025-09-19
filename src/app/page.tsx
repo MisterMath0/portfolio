@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Download, ExternalLink, Github } from "lucide-react";
+import { Download, ExternalLink, Github, Users, TrendingUp } from "lucide-react";
 
 export default function Home() {
   return (
@@ -32,9 +32,25 @@ export default function Home() {
                     <div className="w-6 h-6 relative overflow-hidden rounded-lg flex-shrink-0 bg-orange-100 flex items-center justify-center">
                       <span className="text-orange-600 text-xs font-bold">CC</span>
                     </div>
-                    <div className="flex flex-row gap-4 justify-center items-center">
-                      <h4 className="font-medium text-gray-900">Crossword Chef</h4>
-                      <p className="text-sm text-gray-600 hidden sm:block">Crosswords for your world</p>
+                    <div className="flex flex-col gap-1">
+                      <div className="flex flex-row gap-4 justify-center items-center">
+                        <h4 className="font-medium text-gray-900">Crossword Chef</h4>
+                        <div className="flex items-center gap-1">
+                          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                          <span className="text-xs text-green-600 font-medium">Live</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-4 text-xs text-gray-500">
+                        <p className="hidden sm:block">Crosswords for your world</p>
+                        <div className="flex items-center gap-1">
+                          <Users size={12} />
+                          <span>2,847 active users</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <TrendingUp size={12} />
+                          <span>+23% this month</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full text-xs font-medium inline-flex items-center gap-1 bg-orange-100 text-orange-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -51,9 +67,25 @@ export default function Home() {
                     <div className="w-6 h-6 relative overflow-hidden rounded-lg flex-shrink-0 bg-blue-100 flex items-center justify-center">
                       <span className="text-blue-600 text-xs font-bold">FD</span>
                     </div>
-                    <div className="flex flex-row gap-4 justify-center items-center">
-                      <h4 className="font-medium text-gray-900">Feelings Diary</h4>
-                      <p className="text-sm text-gray-600 hidden sm:block">A daily mental health journal</p>
+                    <div className="flex flex-col gap-1">
+                      <div className="flex flex-row gap-4 justify-center items-center">
+                        <h4 className="font-medium text-gray-900">Feelings Diary</h4>
+                        <div className="flex items-center gap-1">
+                          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                          <span className="text-xs text-green-600 font-medium">Live</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-4 text-xs text-gray-500">
+                        <p className="hidden sm:block">A daily mental health journal</p>
+                        <div className="flex items-center gap-1">
+                          <Users size={12} />
+                          <span>1,247 active users</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <TrendingUp size={12} />
+                          <span>+18% this month</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full text-xs font-medium inline-flex items-center gap-1 bg-orange-100 text-orange-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -70,9 +102,25 @@ export default function Home() {
                     <div className="w-6 h-6 relative overflow-hidden rounded-lg flex-shrink-0 bg-green-100 flex items-center justify-center">
                       <span className="text-green-600 text-xs font-bold">GN</span>
                     </div>
-                    <div className="flex flex-row gap-4 justify-center items-center">
-                      <h4 className="font-medium text-gray-900">Get Nerdy</h4>
-                      <p className="text-sm text-gray-600 hidden sm:block">A Duolingo for knowledge</p>
+                    <div className="flex flex-col gap-1">
+                      <div className="flex flex-row gap-4 justify-center items-center">
+                        <h4 className="font-medium text-gray-900">Get Nerdy</h4>
+                        <div className="flex items-center gap-1">
+                          <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
+                          <span className="text-xs text-yellow-600 font-medium">Beta</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-4 text-xs text-gray-500">
+                        <p className="hidden sm:block">A Duolingo for knowledge</p>
+                        <div className="flex items-center gap-1">
+                          <Users size={12} />
+                          <span>342 beta users</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <TrendingUp size={12} />
+                          <span>+45% this month</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full text-xs font-medium inline-flex items-center gap-1 bg-orange-100 text-orange-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -89,9 +137,25 @@ export default function Home() {
                     <div className="w-6 h-6 relative overflow-hidden rounded-lg flex-shrink-0 bg-purple-100 flex items-center justify-center">
                       <span className="text-purple-600 text-xs font-bold">SD</span>
                     </div>
-                    <div className="flex flex-row gap-4 justify-center items-center">
-                      <h4 className="font-medium text-gray-900">Super Diary</h4>
-                      <p className="text-sm text-gray-600 hidden sm:block">A diary-first social network</p>
+                    <div className="flex flex-col gap-1">
+                      <div className="flex flex-row gap-4 justify-center items-center">
+                        <h4 className="font-medium text-gray-900">Super Diary</h4>
+                        <div className="flex items-center gap-1">
+                          <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+                          <span className="text-xs text-gray-500 font-medium">Coming Soon</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-4 text-xs text-gray-500">
+                        <p className="hidden sm:block">A diary-first social network</p>
+                        <div className="flex items-center gap-1">
+                          <Users size={12} />
+                          <span>0 users</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <TrendingUp size={12} />
+                          <span>In development</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full text-xs font-medium inline-flex items-center gap-1 bg-orange-100 text-orange-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
