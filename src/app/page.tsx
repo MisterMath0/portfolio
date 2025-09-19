@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900 flex flex-col gap-2">
       {/* Header Section */}
-      <div className="bg-gradient-to-br from-green-50 to-purple-50 rounded-4xl py-12 sm:py-24">
+      <div className="bg-gradient-to-br from-orange-50 to-pink-50 rounded-4xl py-12 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 py-16 sm:py-32">
           <header className="text-left">
             <div className="flex flex-col items-start space-y-2">
@@ -18,7 +18,7 @@ export default function Home() {
       </div>
 
       {/* Apps Section */}
-      <div className="bg-gradient-to-br from-red-50 to-yellow-50 rounded-4xl py-12 sm:py-24">
+      <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-4xl py-12 sm:py-24">
         <div className="max-w-6xl mx-auto px-4">
           <section>
             <div className="mb-6">
@@ -106,7 +106,7 @@ export default function Home() {
       </div>
 
       {/* Products Section */}
-      <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-4xl py-12 sm:py-24">
+      <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-4xl py-12 sm:py-24">
         <div className="max-w-6xl mx-auto px-4">
           <section>
             <div className="mb-6">
@@ -213,7 +213,7 @@ export default function Home() {
       </div>
 
       {/* Code Section */}
-      <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-4xl py-12 sm:py-24">
+      <div className="bg-gradient-to-br from-gray-50 to-slate-50 rounded-4xl py-12 sm:py-24">
         <div className="max-w-6xl mx-auto px-4">
           <section>
             <div className="mb-6">
@@ -320,7 +320,7 @@ export default function Home() {
       </div>
 
       {/* Movies & Shows Section */}
-      <div className="bg-gradient-to-br from-green-50 to-indigo-50 rounded-4xl py-12 sm:py-24">
+      <div className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-4xl py-12 sm:py-24">
         <div className="max-w-6xl mx-auto px-4">
           <section>
             <div className="mb-6">
@@ -370,7 +370,7 @@ export default function Home() {
       </div>
 
       {/* Articles Section */}
-      <div className="bg-gradient-to-br from-indigo-50 to-sky-50 rounded-4xl py-12 sm:py-24">
+      <div className="bg-gradient-to-br from-orange-50 to-pink-50 rounded-4xl py-12 sm:py-24">
         <div className="max-w-6xl mx-auto px-4">
           <section>
             <div className="mb-6">
@@ -466,7 +466,7 @@ export default function Home() {
       </div>
 
       {/* Contact Section */}
-      <div className="bg-gradient-to-br from-pink-50 to-orange-50 rounded-4xl py-12 sm:py-24">
+      <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-4xl py-12 sm:py-24">
         <div className="max-w-6xl mx-auto px-4">
           <section>
             <div className="mb-6">
