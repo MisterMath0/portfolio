@@ -7,7 +7,7 @@ export interface PersonalInfo {
   company: string;
   location: string;
   roles: {
-    designer: number;
+    student: number;
     engineer: number;
   };
   social: {
@@ -21,8 +21,7 @@ export interface App {
   id: string;
   name: string;
   description: string;
-  iconInitials: string;
-  iconColor: string;
+  iconUrl: string;
   status: 'live' | 'beta' | 'coming-soon';
   stats: {
     users: number;
@@ -30,7 +29,7 @@ export interface App {
   };
   actionType: 'download' | 'signup' | 'wip';
   actionText: string;
-  url?: string;
+  url: string;
 }
 
 export interface Experience {
@@ -39,16 +38,15 @@ export interface Experience {
   role: string;
   period: string;
   description: string;
-  iconInitials: string;
-  iconColor: string;
-  url?: string;
+  iconUrl: string;
+  url: string;
 }
 
 export interface CodeProject {
   id: string;
   name: string;
   description: string;
-  iconColor: string;
+  iconUrl: string;
   githubUrl: string;
   hoverAnimation: 'rotate' | 'glow' | 'slide' | 'scale';
 }
@@ -78,10 +76,9 @@ export interface MovieShow {
   company: string;
   role: string;
   description: string;
-  iconInitials: string;
-  iconColor: string;
+  iconUrl: string;
   actionText: string;
-  url?: string;
+  url: string;
 }
 
 export interface PortfolioConfig {
@@ -127,12 +124,12 @@ export interface PortfolioConfig {
 // PORTFOLIO CONFIGURATION - Update this to change your portfolio content
 export const portfolioConfig: PortfolioConfig = {
   personal: {
-    name: "Siddhant Mehta",
-    title: "Senior Staff Designer",
-    company: "Slack Inc",
-    location: "Toronto, Canada",
+    name: "Guy Mathieu FOKO",
+    title: "Software Engineer",
+    company: "Heimat24 AI",
+    location: "Rosenheim, Germany",
     roles: {
-      designer: 70,
+      student: 70,
       engineer: 30,
     },
     social: {
@@ -147,8 +144,7 @@ export const portfolioConfig: PortfolioConfig = {
       id: "crossword-chef",
       name: "Crossword Chef",
       description: "Crosswords for your world",
-      iconInitials: "CC",
-      iconColor: "orange",
+      iconUrl: "https://play-lh.googleusercontent.com/your-app-icon-url", // Replace with your actual app icon URL
       status: "live",
       stats: {
         users: 2847,
@@ -156,13 +152,13 @@ export const portfolioConfig: PortfolioConfig = {
       },
       actionType: "download",
       actionText: "Download",
+      url: "https://apps.apple.com/app/crossword-chef", // Replace with your actual app store URL
     },
     {
       id: "feelings-diary",
       name: "Feelings Diary",
       description: "A daily mental health journal",
-      iconInitials: "FD",
-      iconColor: "blue",
+      iconUrl: "https://play-lh.googleusercontent.com/your-app-icon-url", // Replace with your actual app icon URL
       status: "live",
       stats: {
         users: 1247,
@@ -170,13 +166,13 @@ export const portfolioConfig: PortfolioConfig = {
       },
       actionType: "download",
       actionText: "Download",
+      url: "https://apps.apple.com/app/feelings-diary", // Replace with your actual app store URL
     },
     {
       id: "get-nerdy",
       name: "Get Nerdy",
       description: "A Duolingo for knowledge",
-      iconInitials: "GN",
-      iconColor: "green",
+      iconUrl: "https://play-lh.googleusercontent.com/your-app-icon-url", // Replace with your actual app icon URL
       status: "beta",
       stats: {
         users: 342,
@@ -184,13 +180,13 @@ export const portfolioConfig: PortfolioConfig = {
       },
       actionType: "signup",
       actionText: "Sign Up",
+      url: "https://getnerdy.app", // Replace with your actual app URL
     },
     {
       id: "super-diary",
       name: "Super Diary",
       description: "A diary-first social network",
-      iconInitials: "SD",
-      iconColor: "purple",
+      iconUrl: "https://play-lh.googleusercontent.com/your-app-icon-url", // Replace with your actual app icon URL
       status: "coming-soon",
       stats: {
         users: 0,
@@ -198,6 +194,7 @@ export const portfolioConfig: PortfolioConfig = {
       },
       actionType: "wip",
       actionText: "Work in Progress",
+      url: "https://superdiary.app", // Replace with your actual app URL
     },
   ],
 
@@ -208,8 +205,8 @@ export const portfolioConfig: PortfolioConfig = {
       role: "Senior Staff Designer",
       period: "2020 - 2024",
       description: "Mobile design lead for 4 years",
-      iconInitials: "S",
-      iconColor: "purple",
+      iconUrl: "https://a.slack-edge.com/80588/marketing/img/meta/favicon-32.png",
+      url: "https://slack.com",
     },
     {
       id: "outlook",
@@ -217,8 +214,8 @@ export const portfolioConfig: PortfolioConfig = {
       role: "Senior Designer",
       period: "2018 - 2020",
       description: "Play My Emails, upcoming events, ads, widgets and more",
-      iconInitials: "O",
-      iconColor: "blue",
+      iconUrl: "https://res.cdn.office.net/assets/mail/fabric-cdn-prod_20230815.02/assets/images/favicon-outlook.ico",
+      url: "https://outlook.com",
     },
     {
       id: "microsoft-365",
@@ -226,8 +223,8 @@ export const portfolioConfig: PortfolioConfig = {
       role: "Product Designer",
       period: "2017 - 2019",
       description: "Re-imagining visual design for Word, Excel & Powerpoint",
-      iconInitials: "M",
-      iconColor: "blue",
+      iconUrl: "https://res.cdn.office.net/assets/mail/fabric-cdn-prod_20230815.02/assets/images/favicon-office365.ico",
+      url: "https://www.microsoft.com/en-us/microsoft-365",
     },
     {
       id: "skype",
@@ -235,8 +232,8 @@ export const portfolioConfig: PortfolioConfig = {
       role: "Product Designer",
       period: "2016 - 2017",
       description: "A short gig exploring VR and Moments",
-      iconInitials: "Sk",
-      iconColor: "sky",
+      iconUrl: "https://secure.skypeassets.com/apollo/2.6.78/images/icons/favicon.ico",
+      url: "https://skype.com",
     },
     {
       id: "youtube",
@@ -244,8 +241,8 @@ export const portfolioConfig: PortfolioConfig = {
       role: "Design Intern",
       period: "2015 - 2016",
       description: "A glimpse from my internship at Google",
-      iconInitials: "YT",
-      iconColor: "red",
+      iconUrl: "https://www.youtube.com/s/desktop/f506bd45/img/favicon_32x32.png",
+      url: "https://youtube.com",
     },
   ],
 
@@ -254,40 +251,40 @@ export const portfolioConfig: PortfolioConfig = {
       id: "orb",
       name: "Orb",
       description: "A mesmerizing orb, fully designed in SwiftUI",
-      iconColor: "yellow",
-      githubUrl: "https://github.com/username/orb",
+      iconUrl: "https://github.githubassets.com/favicons/favicon.png",
+      githubUrl: "https://github.com/username/orb", // Replace with your actual GitHub URL
       hoverAnimation: "glow",
     },
     {
       id: "siri-screen",
       name: "Prototype Siri Screen Animation",
       description: "Prototype Siri screen animations",
-      iconColor: "blue",
-      githubUrl: "https://github.com/username/siri-screen",
+      iconUrl: "https://github.githubassets.com/favicons/favicon.png",
+      githubUrl: "https://github.com/username/siri-screen", // Replace with your actual GitHub URL
       hoverAnimation: "slide",
     },
     {
       id: "color-tokens",
       name: "ColorTokensKit-Swift",
       description: "A powerful color tokens system for Apple platforms",
-      iconColor: "purple",
-      githubUrl: "https://github.com/username/color-tokens",
+      iconUrl: "https://github.githubassets.com/favicons/favicon.png",
+      githubUrl: "https://github.com/username/color-tokens", // Replace with your actual GitHub URL
       hoverAnimation: "glow",
     },
     {
       id: "siri-textfield",
       name: "Prototype Siri Textfield",
       description: "A simple prototype copying the Apple Siri Textfield animations",
-      iconColor: "green",
-      githubUrl: "https://github.com/username/siri-textfield",
+      iconUrl: "https://github.githubassets.com/favicons/favicon.png",
+      githubUrl: "https://github.com/username/siri-textfield", // Replace with your actual GitHub URL
       hoverAnimation: "slide",
     },
     {
       id: "shadow-kit",
       name: "ShadowKit-SwiftUI",
       description: "Bringing the best looking shadows to your iOS app",
-      iconColor: "indigo",
-      githubUrl: "https://github.com/username/shadow-kit",
+      iconUrl: "https://github.githubassets.com/favicons/favicon.png",
+      githubUrl: "https://github.com/username/shadow-kit", // Replace with your actual GitHub URL
       hoverAnimation: "scale",
     },
   ],
@@ -432,18 +429,18 @@ export const portfolioConfig: PortfolioConfig = {
       company: "DreamWorks Animation",
       role: "3D Animator",
       description: "Past life as a 3D Animator",
-      iconInitials: "DW",
-      iconColor: "sky",
+      iconUrl: "https://www.dreamworks.com/favicon.ico",
       actionText: "Animations",
+      url: "https://www.dreamworks.com",
     },
     {
       id: "animation-mentor",
       company: "Student at Animation Mentor",
       role: "Student",
       description: "Understanding the basics of 3D animation",
-      iconInitials: "AM",
-      iconColor: "violet",
+      iconUrl: "https://www.animationmentor.com/favicon.ico",
       actionText: "Animations",
+      url: "https://www.animationmentor.com",
     },
   ],
 
@@ -483,8 +480,7 @@ export const getExperienceByPeriod = () =>
     return yearB - yearA;
   });
 
-export const getProjectsByColor = (color: string) =>
-  portfolioConfig.codeProjects.filter(project => project.iconColor === color);
+// Utility function removed as iconColor is no longer used
 
 export const getPersonalStatsByType = (type: string) =>
   portfolioConfig.personalStats.filter(stat => stat.iconType === type);
