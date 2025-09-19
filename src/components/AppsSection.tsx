@@ -1,5 +1,7 @@
+'use client';
+
 import { Download, ExternalLink, Users, TrendingUp } from 'lucide-react';
-import { App } from '@/config/portfolio';
+import type { App } from '@/config/portfolio';
 
 interface AppsSectionProps {
   title: string;
@@ -19,40 +21,42 @@ const getStatusColors = (status: App['status']) => {
   }
 };
 
-const getColorClasses = (color: string) => {
-  const colorMap: Record<string, { bg: string; hover: string; text: string; button: string; buttonHover: string }> = {
-    orange: {
+const getAppColorClasses = (appId: string) => {
+  const colorMap: Record<string, { bg: string; hover: string; button: string; buttonHover: string }> = {
+    'crossword-chef': {
       bg: 'bg-orange-100',
       hover: 'group-hover:bg-orange-200',
-      text: 'text-orange-600',
       button: 'bg-orange-100 text-orange-800',
       buttonHover: 'hover:bg-orange-200'
     },
-    blue: {
+    'feelings-diary': {
       bg: 'bg-blue-100',
       hover: 'group-hover:bg-blue-200',
-      text: 'text-blue-600',
       button: 'bg-blue-100 text-blue-800',
       buttonHover: 'hover:bg-blue-200'
     },
-    green: {
+    'get-nerdy': {
       bg: 'bg-green-100',
       hover: 'group-hover:bg-green-200',
-      text: 'text-green-600',
       button: 'bg-green-100 text-green-800',
       buttonHover: 'hover:bg-green-200'
     },
-    purple: {
+    'super-diary': {
       bg: 'bg-purple-100',
       hover: 'group-hover:bg-purple-200',
-      text: 'text-purple-600',
       button: 'bg-purple-100 text-purple-800',
       buttonHover: 'hover:bg-purple-200'
     },
   };
 
-  return colorMap[color] || colorMap.orange;
+  return colorMap[appId] || {
+    bg: 'bg-gray-100',
+    hover: 'group-hover:bg-gray-200',
+    button: 'bg-gray-100 text-gray-800',
+    buttonHover: 'hover:bg-gray-200'
+  };
 };
+
 
 const getActionIcon = (actionType: App['actionType']) => {
   switch (actionType) {
@@ -68,16 +72,23 @@ const getActionIcon = (actionType: App['actionType']) => {
 
 function AppCard({ app }: { app: App }) {
   const statusColors = getStatusColors(app.status);
-  const colorClasses = getColorClasses(app.iconColor);
+  const colorClasses = getAppColorClasses(app.id);
 
   return (
     <div className="bg-white rounded-2xl p-6 hover:scale-105 transition-all duration-300 group cursor-pointer shadow-sm hover:shadow-lg overflow-hidden">
       <div className="flex flex-col h-full">
         <div className="flex items-center justify-between mb-4">
           <div className={`w-12 h-12 ${colorClasses.bg} rounded-xl flex items-center justify-center ${colorClasses.hover} transition-colors duration-300`}>
-            <span className={`${colorClasses.text} text-lg font-bold`}>
-              {app.iconInitials}
-            </span>
+            <img
+              src={app.iconUrl}
+              alt={`${app.name} icon`}
+              className="w-8 h-8 rounded-lg object-cover"
+              onError={(e) => {
+                // Fallback to a default icon if image fails to load
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.parentElement!.innerHTML = `<span class="text-gray-600 text-lg font-bold">${app.name.charAt(0)}</span>`;
+              }}
+            />
           </div>
           <div className="flex items-center gap-1">
             <div className={`w-2 h-2 ${statusColors.dot} rounded-full ${app.status === 'live' ? 'animate-pulse' : ''}`}></div>
@@ -100,10 +111,15 @@ function AppCard({ app }: { app: App }) {
             </div>
           </div>
           <div className="h-0 group-hover:h-10 transition-all duration-300 ease-out overflow-hidden">
-            <button className={`w-full px-4 py-2 rounded-xl text-sm font-medium ${colorClasses.button} ${colorClasses.buttonHover} transition-colors duration-200 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300`}>
+            <a
+              href={app.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`w-full px-4 py-2 rounded-xl text-sm font-medium ${colorClasses.button} ${colorClasses.buttonHover} transition-colors duration-200 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300`}
+            >
               {app.actionText}
               {getActionIcon(app.actionType)}
-            </button>
+            </a>
           </div>
         </div>
       </div>
