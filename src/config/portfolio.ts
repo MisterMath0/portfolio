@@ -155,20 +155,6 @@ export const portfolioConfig: PortfolioConfig = {
       url: "https://mindra.klarvio.app/MindraTimer.dmg", 
     },
     {
-      id: "settl",
-      name: "Settl",
-      description: "Settl makes Germany accessible",
-      iconUrl: "", 
-      status: "coming-soon",
-      stats: {
-        users: 0,
-        growth: "In development",
-      },
-      actionType: "signup",
-      actionText: "Join the waitlist",
-      url: "", 
-    },
-    {
       id: "mira_ios",
       name: "Mira",
       description: "Organize Life Step by Step",
@@ -183,7 +169,21 @@ export const portfolioConfig: PortfolioConfig = {
       url: "",
     },
     {
-      id: "sautokraft",
+      id: "settl",
+      name: "Settl",
+      description: "Settl makes Germany accessible",
+      iconUrl: "", 
+      status: "coming-soon",
+      stats: {
+        users: 0,
+        growth: "In development",
+      },
+      actionType: "signup",
+      actionText: "Join the waitlist",
+      url: "", 
+    },
+    {
+      id: "autokraft",
       name: "AutoKraft",
       description: "A worflow generator for N8N",
       iconUrl: "", 
