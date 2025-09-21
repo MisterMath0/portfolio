@@ -172,7 +172,7 @@ export const portfolioConfig: PortfolioConfig = {
       id: "settl",
       name: "Settl",
       description: "Settl makes Germany accessible",
-      iconUrl: "", 
+      iconUrl: "https://ui-avatars.com/api/?name=Settl&background=6366f1&color=fff&size=128&format=png", 
       status: "coming-soon",
       stats: {
         users: 0,
@@ -186,7 +186,7 @@ export const portfolioConfig: PortfolioConfig = {
       id: "autokraft",
       name: "AutoKraft",
       description: "A worflow generator for N8N",
-      iconUrl: "", 
+      iconUrl: "https://ui-avatars.com/api/?name=AK&background=ef4444&color=fff&size=128&format=png", 
       status: "offline",
       stats: {
         users: 0,
