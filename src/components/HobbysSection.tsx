@@ -1,6 +1,7 @@
 'use client';
 
 import { ExternalLink } from 'lucide-react';
+import Image from 'next/image';
 import type { MovieShow } from '@/config/portfolio';
 
 interface MoviesSectionProps {
@@ -22,15 +23,21 @@ function MovieShowItem({ movieShow, index }: { movieShow: MovieShow; index: numb
       <div className="flex items-center justify-between w-full">
         <div className="flex items-center space-x-2 px-1">
           <div className="w-8 h-8 relative overflow-hidden rounded-lg flex-shrink-0 bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors duration-300">
-            <img
-              src={movieShow.iconUrl}
-              alt={`${movieShow.name} icon`}
-              className="w-5 h-5 rounded object-cover"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-                e.currentTarget.parentElement!.innerHTML = `<span class="text-gray-600 text-sm font-bold">${movieShow.name.charAt(0)}</span>`;
-              }}
-            />
+            {movieShow.iconUrl ? (
+              <Image
+                src={movieShow.iconUrl}
+                alt={`${movieShow.name} icon`}
+                width={20}
+                height={20}
+                className="w-5 h-5 rounded object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.parentElement!.innerHTML = `<span class="text-gray-600 text-sm font-bold">${movieShow.name.charAt(0)}</span>`;
+                }}
+              />
+            ) : (
+              <span className="text-gray-600 text-sm font-bold">{movieShow.name.charAt(0)}</span>
+            )}
           </div>
           <div className="flex flex-row gap-4 justify-center items-center">
             <h4 className="font-medium text-gray-900 group-hover:text-gray-700 transition-colors duration-300">

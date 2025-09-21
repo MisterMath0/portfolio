@@ -4,7 +4,6 @@ import AppsSection from '@/components/AppsSection';
 import ExperienceSection from '@/components/ExperienceSection';
 import CodeSection from '@/components/CodeSection';
 import PersonalSection from '@/components/PersonalSection';
-import ArticlesSection from '@/components/ArticlesSection';
 import MoviesSection from '@/components/HobbysSection';
 import ContactSection from '@/components/ContactSection';
 

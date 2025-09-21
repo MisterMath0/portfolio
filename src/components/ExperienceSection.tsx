@@ -1,6 +1,7 @@
 'use client';
 
 import { ExternalLink } from 'lucide-react';
+import Image from 'next/image';
 import type { Experience } from '@/config/portfolio';
 
 interface ExperienceSectionProps {
@@ -22,15 +23,21 @@ function ExperienceItem({ experience }: { experience: Experience }) {
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors duration-300">
-              <img
-                src={experience.iconUrl}
-                alt={`${experience.company} icon`}
-                className="w-6 h-6 rounded object-cover"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  e.currentTarget.parentElement!.innerHTML = `<span class="text-gray-600 text-sm font-bold">${experience.company.charAt(0)}</span>`;
-                }}
-              />
+              {experience.iconUrl ? (
+                <Image
+                  src={experience.iconUrl}
+                  alt={`${experience.company} icon`}
+                  width={24}
+                  height={24}
+                  className="w-6 h-6 rounded object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.parentElement!.innerHTML = `<span class="text-gray-600 text-sm font-bold">${experience.company.charAt(0)}</span>`;
+                  }}
+                />
+              ) : (
+                <span className="text-gray-600 text-sm font-bold">{experience.company.charAt(0)}</span>
+              )}
             </div>
             <div>
               <h4 className="font-semibold text-gray-900 text-lg">{experience.company}</h4>

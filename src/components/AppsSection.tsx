@@ -1,6 +1,7 @@
 'use client';
 
 import { Download, ExternalLink, Users, TrendingUp } from 'lucide-react';
+import Image from 'next/image';
 import type { App } from '@/config/portfolio';
 
 interface AppsSectionProps {
@@ -89,16 +90,22 @@ function AppCard({ app, index }: { app: App; index: number }) {
       <div className="flex flex-col h-full">
         <div className="flex items-center justify-between mb-4">
           <div className={`w-12 h-12 ${colorClasses.bg} rounded-xl flex items-center justify-center ${colorClasses.hover} transition-colors duration-300`}>
-            <img
-              src={app.iconUrl}
-              alt={`${app.name} icon`}
-              className="w-8 h-8 rounded-lg object-cover"
-              onError={(e) => {
-                // Fallback to a default icon if image fails to load
-                e.currentTarget.style.display = 'none';
-                e.currentTarget.parentElement!.innerHTML = `<span class="text-gray-600 text-lg font-bold">${app.name.charAt(0)}</span>`;
-              }}
-            />
+            {app.iconUrl ? (
+              <Image
+                src={app.iconUrl}
+                alt={`${app.name} icon`}
+                width={32}
+                height={32}
+                className="w-8 h-8 rounded-lg object-cover"
+                onError={(e) => {
+                  // Fallback to a default icon if image fails to load
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.parentElement!.innerHTML = `<span class="text-gray-600 text-lg font-bold">${app.name.charAt(0)}</span>`;
+                }}
+              />
+            ) : (
+              <span className="text-gray-600 text-lg font-bold">{app.name.charAt(0)}</span>
+            )}
           </div>
           <div className="flex items-center gap-1">
             <div className={`w-2 h-2 ${statusColors.dot} rounded-full ${app.status === 'live' ? 'animate-pulse' : ''}`}></div>

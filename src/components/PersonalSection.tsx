@@ -7,7 +7,7 @@ interface PersonalSectionProps {
 }
 
 const getIconComponent = (iconType: string, size = 18) => {
-  const iconMap: Record<string, React.ComponentType<any>> = {
+  const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
     music: Music,
     book: BookOpen,
     cloud: Cloud,
