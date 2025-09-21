@@ -1,0 +1,32 @@
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: portfolio
+    restart: unless-stopped
+    networks:
+      - web
+    labels:
+      # Enable Traefik
+      - "traefik.enable=true"
+      
+      # Main domain routing (mrmath.dev)
+      - "traefik.http.routers.portfolio.rule=Host(`mrmath.dev`)"
+      - "traefik.http.routers.portfolio.tls=true"
+      - "traefik.http.routers.portfolio.service=portfolio"
+      - "traefik.http.services.portfolio.loadbalancer.server.port=3000"
+      
+      # Optional: Also respond to www subdomain
+      - "traefik.http.routers.portfolio-www.rule=Host(`www.mrmath.dev`)"
+      - "traefik.http.routers.portfolio-www.tls=true"
+      - "traefik.http.routers.portfolio-www.service=portfolio"
+      
+      # Redirect www to non-www (optional)
+      - "traefik.http.middlewares.redirect-www.redirectregex.regex=^https://www.mrmath.dev/(.*)"
+      - "traefik.http.middlewares.redirect-www.redirectregex.replacement=https://mrmath.dev/$${1}"
+      - "traefik.http.routers.portfolio-www.middlewares=redirect-www"
+
+networks:
+  web:
+    external: true
